@@ -14,24 +14,26 @@ Run shell scripts to train the models
 `python train.py`
 
 ## Testing
+Run shell scripts to remove rain from images
 `python show.py`
 
 ## Evaluation metrics
+Run shell scripts to eval the models
 `python eval.py`
 
-#Visual Deraining Results
+# Visual Deraining Results
 Rain200H: [Link](https://pan.baidu.com/s/1SIJtC0uyrrHF9cUj6GnjQQ?pwd=1314)
 
 Rain200L: [Link](https://pan.baidu.com/s/1ZD2G1_NuSRMVadQn3F1tRA?pwd=1314)
 
-DDN-Data: [Link]
+Rain1200: [Link](https://pan.baidu.com/s/1-bMHbhaRxtSIckAenhYcvQ?pwd=1314)
 
-DID-Data: [Link]
+Rain12: [Link](https://pan.baidu.com/s/1ZjmXWOqIZU6LU0ljbJhS2Q?pwd=1314 )
 
-SPA-Data: [Link]
+SPA-Data: [Link](https://pan.baidu.com/s/15XIO7BMILbUaOqVu7_NJ_g?pwd=1314 )
 
 # Pretrained Model
-Rain200H_Model: [Link]
+Rain200H_Model: [Link](https://pan.baidu.com/s/1YX-IHZTNSnUCImgxFxhAQw?pwd=1314 )
 
 If you have any questions, please contact fangsiyanfsy@163.com
 
