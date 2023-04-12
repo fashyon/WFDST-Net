@@ -3,22 +3,22 @@ The code of the paper "Wavelet Frequency Division Self-attention Transformer Ima
 论文《小波分频自注意力Transformer图像去雨网络》的代码
 
 # Important Requirements
-python = 3.7
-pytorch = 1.9
-opencv-python = 4.5
+python = 3.7  
+pytorch = 1.9  
+opencv-python = 4.5  
 numpy = 1.21
 
 # Getting Started
 ## Training
-Run shell scripts to train the models
+Run shell scripts to train the models  
 `python train.py`
 
 ## Testing
-Run shell scripts to remove rain from images
+Run shell scripts to remove rain from images  
 `python show.py`
 
 ## Evaluation metrics
-Run shell scripts to eval the models
+Run shell scripts to eval the models  
 `python eval.py`
 
 # Visual Deraining Results
@@ -35,5 +35,5 @@ SPA-Data: [Link](https://pan.baidu.com/s/15XIO7BMILbUaOqVu7_NJ_g?pwd=1314 )
 # Pretrained Model
 Rain200H_Model: [Link](https://pan.baidu.com/s/1YX-IHZTNSnUCImgxFxhAQw?pwd=1314 )
 
-If you have any questions, please contact fangsiyanfsy@163.com
+# If you have any questions, please contact fangsiyanfsy@163.com
 
