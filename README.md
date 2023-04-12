@@ -13,20 +13,20 @@ opencv-python = 4.5
 numpy = 1.21
 
 # Getting Started
-## Training
+## Train
 Run shell scripts to train the models  
 
 `python train.py`
 
-## Testing
-Run shell scripts to remove rain from images  
-
-`python show.py`
-
-## Evaluation metrics
+## Eval
 Run shell scripts to eval the models  
 
 `python eval.py`
+
+## Show
+Run shell scripts to show rain removal effect"  
+
+`python show.py`
 
 # Visual Deraining Results
 Rain200H: [Link](https://pan.baidu.com/s/1SIJtC0uyrrHF9cUj6GnjQQ?pwd=1314)
