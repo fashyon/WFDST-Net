@@ -42,5 +42,10 @@ SPA-Data: [Link](https://pan.baidu.com/s/15XIO7BMILbUaOqVu7_NJ_g?pwd=1314)
 # Pretrained Model
 Rain200H_Model: [Link](https://pan.baidu.com/s/1YX-IHZTNSnUCImgxFxhAQw?pwd=1314 )
 
-# If you have any questions, please contact fangsiyanfsy@163.com
+# Acknowledgement
+This code is based on the [RESCAN
+](https://github.com/XiaLiPKU/RESCAN). Thank them for their sharing.
+
+# Contact
+If you have any questions, please contact fangsiyanfsy@163.com
 
