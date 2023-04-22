@@ -42,7 +42,7 @@ SPA-Data: [Link](https://pan.baidu.com/s/1TDnKKgHPkHFwcl3-mN0HDA?pwd=1314)
 # Pretrained Model
 Rain200H_Model: [Link](https://pan.baidu.com/s/1YX-IHZTNSnUCImgxFxhAQw?pwd=1314 )
 
-# Dataset
+# New dataset
 VOCRain250: [Link](https://pan.baidu.com/s/1GTDixhjUIucTL2gCJqmMhA?pwd=1314 )
 
 # Acknowledgement
