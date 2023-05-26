@@ -178,9 +178,9 @@ class nlwt(nn.Module):
 
         return A, B, C, D, orisize
 
-class ilwtbA(nn.Module):
+class inlwt(nn.Module):
     def __init__(self):
-        super(ilwtbA, self).__init__()
+        super(inlwt, self).__init__()
         self.requires_grad = False
         self.P2mulU2 = np.array([[1.3968, -0.2212, -0.5412, 1.3066],
                             [0.2212, 1.3968, -1.3066, -0.5412],
