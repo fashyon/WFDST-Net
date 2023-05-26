@@ -39,7 +39,6 @@ def col2im(col,orisize,filter_h, filter_w, stride=1, pad=0):
     return img[:, :, pad:H + pad, pad:W + pad]
 
 
-#下面是lwtbA的
 class inlwt_catone(nn.Module):
     def __init__(self):
         super(inlwt_catone, self).__init__()
@@ -357,8 +356,6 @@ class WFDSA(nn.Module):
         x = self.proj_drop(x)
 
         return x
-
-
 
 class ConvPosEnc(nn.Module):
     def __init__(self, dim, k=3, act=False, normtype=False):
