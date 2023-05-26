@@ -24,7 +24,7 @@ def im2col(input_data, filter_h, filter_w, stride=1, pad=0):
     return col
 
 
-def col2im(col,orisize,filter_h, filter_w, stride=1, pad=0):
+def col2im(col, orisize, filter_h, filter_w, stride=1, pad=0):
     N, C, H, W = orisize
     out_h = (H + 2*pad - filter_h)//stride + 1
     out_w = (W + 2*pad - filter_w)//stride + 1
@@ -57,16 +57,16 @@ class inlwt_catone(nn.Module):
     def forward(self, decoder_one,orisize):
         out_channel = orisize[1]
 
-        A = decoder_one[:, 0:out_channel, :, :]
-        B = decoder_one[:, out_channel:out_channel * 2, :, :]
-        C = decoder_one[:, out_channel * 2:out_channel * 3, :, :]
-        D = decoder_one[:, out_channel * 3:out_channel * 4, :, :]
+        A_low0 = decoder_one[:, 0:out_channel, :, :]
+        B_high1 = decoder_one[:, out_channel:out_channel * 2, :, :]
+        C_high2 = decoder_one[:, out_channel * 2:out_channel * 3, :, :]
+        D_high3 = decoder_one[:, out_channel * 3:out_channel * 4, :, :]
 
-        b, c, h1, w1 = A.size()
-        A = A.reshape(b, c, 1, h1 * w1);
-        B = B.reshape(b, c, 1, h1 * w1);
-        C = C.reshape(b, c, 1, h1 * w1);
-        D = D.reshape(b, c, 1, h1 * w1);
+        b, c, h1, w1 = A_low0.size()
+        A = A_low0.reshape(b, c, 1, h1 * w1);
+        B = B_high1.reshape(b, c, 1, h1 * w1);
+        C = C_high2.reshape(b, c, 1, h1 * w1);
+        D = D_high3.reshape(b, c, 1, h1 * w1);
 
         Y1 = torch.cat([A, B, C, D], dim=2)
         Y2 = self.P2mulU2 @ Y1;
@@ -125,11 +125,11 @@ class nlwt_catone(nn.Module):
 
         x2 = self.U2ImulP2Imul4 @ x1;
 
-        A = x2[:, :, 0, :].reshape(b, c, h1, w1);
-        B = x2[:, :, 1, :].reshape(b, c, h1, w1);
-        C = x2[:, :, 2, :].reshape(b, c, h1, w1);
-        D = x2[:, :, 3, :].reshape(b, c, h1, w1);
-        out_catone = torch.cat([A, B, C, D], dim=1)
+        A_low0 = x2[:, :, 0, :].reshape(b, c, h1, w1);
+        B_high1 = x2[:, :, 1, :].reshape(b, c, h1, w1);
+        C_high2 = x2[:, :, 2, :].reshape(b, c, h1, w1);
+        D_high3 = x2[:, :, 3, :].reshape(b, c, h1, w1);
+        out_catone = torch.cat([A_low0, B_high1, C_high2, D_high3], dim=1)
 
         return out_catone, orisize
 
@@ -171,12 +171,12 @@ class nlwt(nn.Module):
 
         x2 = self.U2ImulP2Imul4 @ x1;
 
-        A = x2[:, :, 0, :].reshape(b, c, h1, w1);
-        B = x2[:, :, 1, :].reshape(b, c, h1, w1);
-        C = x2[:, :, 2, :].reshape(b, c, h1, w1);
-        D = x2[:, :, 3, :].reshape(b, c, h1, w1);
+        A_low0 = x2[:, :, 0, :].reshape(b, c, h1, w1);
+        B_high1 = x2[:, :, 1, :].reshape(b, c, h1, w1);
+        C_high2 = x2[:, :, 2, :].reshape(b, c, h1, w1);
+        D_high3 = x2[:, :, 3, :].reshape(b, c, h1, w1);
 
-        return A, B, C, D, orisize
+        return A_low0, B_high1, C_high2, D_high3, orisize
 
 class inlwt(nn.Module):
     def __init__(self):
@@ -193,12 +193,12 @@ class inlwt(nn.Module):
         self.P2mulU2 = torch.cuda.FloatTensor(self.P2mulU2).unsqueeze(0).unsqueeze(0)
         self.P1mulU1div4 = torch.cuda.FloatTensor(self.P1mulU1div4).unsqueeze(0).unsqueeze(0)
 
-    def forward(self, A,B,C,D,orisize):
-        b, c, h1, w1 = A.size()
-        A = A.reshape(b, c, 1, h1 * w1);
-        B = B.reshape(b, c, 1, h1 * w1);
-        C = C.reshape(b, c, 1, h1 * w1);
-        D = D.reshape(b, c, 1, h1 * w1);
+    def forward(self, A_low0, B_high1, C_high2, D_high3, orisize):
+        b, c, h1, w1 = A_low0.size()
+        A = A_low0.reshape(b, c, 1, h1 * w1);
+        B = B_high1.reshape(b, c, 1, h1 * w1);
+        C = C_high2.reshape(b, c, 1, h1 * w1);
+        D = D_high3.reshape(b, c, 1, h1 * w1);
 
         Y1 = torch.cat([A, B, C, D], dim=2)
         Y2 = self.P2mulU2 @ Y1;
