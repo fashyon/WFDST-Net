@@ -2,8 +2,6 @@ import torch
 from torch import nn
 import torch.nn.functional as F
 import settings
-from c4bukefen import haardwt,haariwt,haardwt_one,haariwt_one
-from einops import repeat
 from timm.models.layers import DropPath, to_2tuple
 import numpy as np
 
