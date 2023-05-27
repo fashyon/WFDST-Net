@@ -1,8 +1,7 @@
 import os
 import logging
 
-# root_dir = './datasets/Rain200H'
-root_dir = 'F:\data1/fangsiyan\dataset/rain100H_fenbie'
+root_dir = './datasets/Rain200H'
 real_dir = './datasets/real'
 log_dir = './logdir'
 log_test_dir = './log_test/'
@@ -16,7 +15,6 @@ channel = 64
 window_size = 8
 depth = 2
 heads = 2
-
 
 lr = 5e-4
 batch_size = 8
