@@ -1,7 +1,8 @@
 import os
 import logging
 
-root_dir = './datasets/Rain200H'
+# root_dir = './datasets/Rain200H'
+root_dir = 'F:\data1/fangsiyan\dataset/rain100H_fenbie'
 real_dir = './datasets/real'
 log_dir = './logdir'
 log_test_dir = './log_test/'
@@ -30,11 +31,7 @@ save_steps = 50
 save_epochs = 50
 
 num_workers = 0
-num_GPU = 1
-device_id = ''
-for i in range(num_GPU):
-    device_id += str(i) + ','
-
+device_id = '0'
 
 logger = logging.getLogger('train')
 logger.setLevel(logging.INFO)
