@@ -181,7 +181,7 @@ class Session:
         img_file = os.path.join(self.log_dir, '%d_%s.jpg' % (self.step, name))
         cv2.imwrite(img_file, img)
 
-def run_train_val(ckp_name_net='latest_derain_net'):
+def run_train_val(ckp_name_net='latest_net'):
     sess = Session()
     sess.load_checkpoints_net(ckp_name_net)
     sess.tensorboard('train')
