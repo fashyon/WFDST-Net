@@ -4,11 +4,8 @@ import cv2
 import argparse
 import math
 import numpy as np
-import itertools
-
 import torch
 from torch import nn
-from torch.nn import DataParallel
 from torch.optim import Adam
 from torch.autograd import Variable 
 from torch.utils.data import DataLoader
