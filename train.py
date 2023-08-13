@@ -188,6 +188,7 @@ def run_train_val(ckp_name_net='latest_net'):
     dt_train = sess.get_dataloader('train')
     while sess.step <= settings.total_step:
         sess.sche_net.step()
+        sess.net.train()
         try:
             batch_t = next(dt_train)
         except StopIteration:
