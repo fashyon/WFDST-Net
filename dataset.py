@@ -5,7 +5,6 @@ from numpy.random import RandomState
 from torch.utils.data import Dataset
 import random
 import settings as settings
-# import settings15524fjd as settings
 from natsort import natsorted
 
 
