@@ -61,7 +61,7 @@ class Session:
         self.batch_size = settings.batch_size
         self.writers = {}
         self.dataloaders = {}
-        self.opt_net = Adam(self.net.parameters(), lr=5e-4)
+        self.opt_net = Adam(self.net.parameters(), lr=settings.lr)
         self.sche_net = MultiStepLR(self.opt_net, milestones=[settings.l1*settings.one_epoch_step, settings.l2*settings.one_epoch_step], gamma=0.1)
 
     def tensorboard(self, name):
